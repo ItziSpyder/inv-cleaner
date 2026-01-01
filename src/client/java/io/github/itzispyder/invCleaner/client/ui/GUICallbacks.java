@@ -94,7 +94,7 @@ public class GUICallbacks implements CallbackListener {
     public void onShowToggled(MouseEvent e) {
         if (!e.input.isDown())
             return;
-        parent.search.setQuery("is:enabled");
+        parent.getSearchBar().setQuery("is:enabled");
         parent.updateResults(parent.getCurrentQuery());
     }
 }

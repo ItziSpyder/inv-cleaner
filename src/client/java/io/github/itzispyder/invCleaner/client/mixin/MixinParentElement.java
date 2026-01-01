@@ -16,14 +16,14 @@ public interface MixinParentElement {
     @Inject(method = "mouseClicked", at = @At("HEAD"))
     default void mouseClicked(Click click, boolean doubled, CallbackInfoReturnable<Boolean> cir) {
         ParentElement parent = (ParentElement) this;
-        if (parent instanceof InventoryScreen)
+        if (parent instanceof InventoryScreen inv && !((AccessorRecipeBookScreen) inv).accessRecipeBook().isOpen())
             GUIHandler.get().mouseClicked(click, doubled);
     }
 
     @Inject(method = "keyReleased", at = @At("HEAD"))
     default void keyReleased(KeyInput input, CallbackInfoReturnable<Boolean> cir) {
         ParentElement parent = (ParentElement) this;
-        if (parent instanceof InventoryScreen)
+        if (parent instanceof InventoryScreen inv && !((AccessorRecipeBookScreen) inv).accessRecipeBook().isOpen())
             GUIHandler.get().keyReleased(input);
     }
 }

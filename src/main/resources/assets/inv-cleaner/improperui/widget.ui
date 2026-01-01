@@ -6,7 +6,7 @@ div #anchor {
         x: 110;
         center: vertical;
         border-radius: 5;
-        background-color: #80000000;
+        background-color: #10ffffff;
 
         label #title {
             inner-text: "Inventory Cleaner";

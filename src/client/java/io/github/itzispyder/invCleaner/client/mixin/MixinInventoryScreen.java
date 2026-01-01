@@ -24,7 +24,7 @@ public abstract class MixinInventoryScreen {
     @Inject(method = "mouseReleased", at = @At("HEAD"))
     void mouseReleased(Click click, CallbackInfoReturnable<Boolean> cir) {
         ParentElement parent = (ParentElement) this;
-        if (parent instanceof InventoryScreen)
+        if (parent instanceof InventoryScreen inv && !((AccessorRecipeBookScreen) inv).accessRecipeBook().isOpen())
             GUIHandler.get().mouseReleased(click);
     }
 

@@ -15,10 +15,7 @@ public class SearchResultElement extends KeyHolderElement {
     private final boolean detailed;
 
     public SearchResultElement(Item item, boolean detailed) {
-        if (detailed)
-            this.queueProperty("size: 100% 20");
-        else
-            this.queueProperty("size: 33 20");
+        this.queueProperty("size: " + (detailed ? "100% 20" : "33 20"));
         this.queueProperty("border-radius: 2");
         this.queueProperty("background-color: #60000000");
         this.queueProperty("margin-bottom: 1");

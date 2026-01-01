@@ -16,7 +16,7 @@ public class GUI extends ImproperUIPanel {
 
     private final Element results;
     private final Element clear;
-    public final TextBox search;
+    private final TextBox search;
     private final Element root;
     private boolean showDetails;
 
@@ -37,12 +37,12 @@ public class GUI extends ImproperUIPanel {
         return root;
     }
 
-    public void setDetailed(boolean detailed) {
-        if (detailed)
-            results.callProperty("grid-columns: 1");
-        else
-            results.callProperty("grid-columns: 3");
+    public TextBox getSearchBar() {
+        return search;
+    }
 
+    public void setDetailed(boolean detailed) {
+        results.gridColumns = detailed ? 1 : 3;
         showDetails = detailed;
         Config.setDetailed(showDetails);
         updateResults(getCurrentQuery());

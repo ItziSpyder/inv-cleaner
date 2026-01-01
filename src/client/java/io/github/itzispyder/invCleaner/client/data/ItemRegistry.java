@@ -14,7 +14,7 @@ public class ItemRegistry {
         List<String> list = Config.readList();
         Registries.ITEM.stream()
                 .filter(item -> test(item, query, list))
-                .limit(33)
+                .limit(64)
                 .sorted(Comparator.comparing(Item::getTranslationKey))
                 .forEach(action);
     }

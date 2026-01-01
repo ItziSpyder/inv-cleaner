@@ -19,15 +19,19 @@ public abstract class MixinHandledScreen {
     @Inject(method = "mouseScrolled", at = @At("HEAD"))
     void mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount, CallbackInfoReturnable<Boolean> cir) {
         ParentElement parent = (ParentElement) this;
-        if (parent instanceof InventoryScreen)
+        if (parent instanceof InventoryScreen inv && !((AccessorRecipeBookScreen) inv).accessRecipeBook().isOpen())
             GUIHandler.get().mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);
     }
 
-    @Inject(method = "keyPressed", at = @At("HEAD"))
+    @Inject(method = "keyPressed", at = @At("HEAD"), cancellable = true)
     void keyPressed(KeyInput input, CallbackInfoReturnable<Boolean> cir) {
         ParentElement parent = (ParentElement) this;
-        if (parent instanceof InventoryScreen)
-            GUIHandler.get().keyPressed(input);
+        GUI gui = GUIHandler.get();
+        if (parent instanceof InventoryScreen inv && !((AccessorRecipeBookScreen) inv).accessRecipeBook().isOpen()) {
+            gui.keyPressed(input);
+            if (gui.focused == gui.getSearchBar())
+                cir.cancel();
+        }
     }
 
     @Inject(method = "tick", at = @At("HEAD"))
@@ -36,13 +40,8 @@ public abstract class MixinHandledScreen {
             GUIHandler.get().tick();
     }
 
-    @Inject(method = "close", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "close", at = @At("TAIL"))
     public void close(CallbackInfo ci) {
-        GUI gui = GUIHandler.get();
-        if (gui != null && gui.focused == gui.search) {
-            ci.cancel();
-            return;
-        }
         GUIHandler.destroy();
     }
 }
