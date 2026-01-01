@@ -1,0 +1,145 @@
+div #anchor {
+    center: both;
+
+    div #widget {
+        size: 120 250;
+        x: 110;
+        center: vertical;
+        border-radius: 5;
+        background-color: #80000000;
+
+        label #title {
+            inner-text: "Inventory Cleaner";
+            center: horizontal;
+            y: 5;
+        }
+
+        textbox #search {
+            width: 85%;
+            center: horizontal;
+            y: 20;
+            border-radius: 10;
+            placeholder: "Search Item i.e.";
+            on-key: onQueryUpdate;
+
+            div #clear {
+                size: 4;
+                inner-text: "x";
+                text-scale: 0.75;
+                padding: 4;
+                border-radius: 20;
+                center: vertical;
+                x: 93%;
+                background-color: #60000000;
+                on-click: onClearQuery;
+            }
+        }
+
+        label {
+            inner-text: "For all results";
+            text-scale: 0.7;
+            y: 40;
+            x: 10;
+        }
+        button #enable-results {
+            inner-text: "Enable";
+            y: 50;
+            x: 10;
+            width: 25;
+            height: 5;
+            text-scale: 0.7;
+            background-color: lime;
+            on-click: onResultsEnable;
+        }
+        button #disable-results {
+            inner-text: "Disable";
+            y: 50;
+            x: 40;
+            width: 25;
+            height: 5;
+            text-scale: 0.7;
+            background-color: #ff5050;
+            on-click: onResultsDisable;
+        }
+        button #invert-results {
+            inner-text: "Invert";
+            y: 50;
+            x: 70;
+            width: 25;
+            height: 5;
+            text-scale: 0.7;
+            on-click: onResultsInvert;
+        }
+        button #filter-results {
+            inner-text: "Show Toggled";
+            y: 60;
+            x: 10;
+            width: 50;
+            height: 5;
+            text-scale: 0.7;
+            on-click: onShowToggled;
+        }
+
+        label {
+            inner-text: "Actions";
+            text-scale: 0.7;
+            y: 75;
+            x: 10;
+        }
+        button #action-discard {
+            inner-text: "Discard";
+            y: 85;
+            x: 10;
+            width: 30;
+            height: 5;
+            text-scale: 0.7;
+            background-color: #00b7ff;
+            on-click: onActionDiscard;
+        }
+        button #action-keep {
+            inner-text: "Keep";
+            y: 85;
+            x: 45;
+            width: 20;
+            height: 5;
+            text-scale: 0.7;
+            background-color: #ff5050;
+            on-click: onActionKeep;
+        }
+
+        label {
+            inner-text: "Details";
+            text-scale: 0.7;
+            y: 75;
+            x: 79;
+        }
+        checkbox #show-details -inv-cleaner:config.properties:showDetails {
+            y: 85;
+            x: 80;
+            on-click: onShowDetailsToggle;
+        }
+
+        div #results {
+            size: 85% 150;
+            y: 100;
+            center: horizontal;
+            children-align: grid;
+            opacity: 0;
+            scrollable: true;
+            background-clip: margin;
+
+            div #test-result {
+                size: 100% 20;
+                border-radius: 2;
+                background-color: #60000000;
+                margin-bottom: 1;
+
+                checkbox {
+                    size: 7;
+                    center: vertical;
+                    x: 5;
+                }
+            }
+        }
+    }
+}

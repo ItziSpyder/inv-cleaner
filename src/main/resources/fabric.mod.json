@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "inv-cleaner",
+  "version": "${version}",
+  "name": "inv-cleaner",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/inv-cleaner/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "io.github.itzispyder.invCleaner.client.InvCleanerDataGenerator"
+    ],
+    "client": [
+      "io.github.itzispyder.invCleaner.client.InvCleanerClient"
+    ],
+    "main": [
+      "io.github.itzispyder.invCleaner.InvCleaner"
+    ]
+  },
+  "mixins": [
+    "inv-cleaner.mixins.json",
+    {
+      "config": "inv-cleaner.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "improperui": ">=${improperui_version}"
+  }
+}
