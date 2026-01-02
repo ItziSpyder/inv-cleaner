@@ -1,6 +1,18 @@
-# Inventory Cleaner
+<img width=100% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/banner.png" alt="">
+<br>
+<br>
+<p align="center">Keep your hotbar ready and inventory clutter-free!</p>
 
----
+
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/inventory-trash-cleaner?label=Modrinth+Downloads&color=04b54b)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/itzispyder/inv-cleaner/total?label=GitHub+Downloads&color=blue)
+
+
+<img width=100% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/strip.png" alt="">
+
+
+<h2 align="center" style="margin: auto;">📖 About</h2>
+
 Ever had items you wanted to discard build up in your inventory over time?
 Dirt? Sand? Stone? Here's your solution!
 
@@ -11,8 +23,12 @@ Dirt? Sand? Stone? Here's your solution!
 This mod requires [**ImproperUI**](https://modrinth.com/mod/improperui) to run.
 
 
+<br>
+<img width=100% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/strip.png" alt="">
+<br>
 
-## Actions
+
+<h2 align="center">🛠️ Usage</h2>
 
 | Action  | Description                               |
 |:--------|:------------------------------------------|
@@ -20,24 +36,23 @@ This mod requires [**ImproperUI**](https://modrinth.com/mod/improperui) to run.
 | Keep    | Drops all unselected items from inventory |
 
 
-## Recent Changes
-```yml
-Version: 0.1.1
-
-Changed:
-  - background color to be more visible
-
-Patches:
-  - widgets still being clickable despite being hidden
-```
-
-
-![img.png](assets/img.png)
-
+<br>
+<img width=100% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/strip.png" alt="">
 <br>
 
-![img_1.png](assets/img_1.png)
+
+<h2 align="center">📷 Media</h2>
+
+<img width=49% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/img.png" alt="">
+<img width=49% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/img_1.png" alt="">
+<img width=49% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/img_2.png" alt="">
+
 
 <br>
+<img width=100% src="https://raw.githubusercontent.com/ItziSpyder/inv-cleaner/refs/heads/master/assets/strip.png" alt="">
+<br>
 
-![img_2.png](assets/img_2.png)
+
+Thanks for downloading!
+<br>
+Like this mod? Support by dropping a follow or sharing this mod with a friend!
